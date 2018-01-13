@@ -1,0 +1,27 @@
+s ¡ú S
+S ¡ú program id ; compound_stmt .
+compound_stmt ¡ú begin stmts end
+compound_stmt ¡ú begin end
+stmts ¡ú stmt
+stmts ¡ú stmts ; stmt
+stmt ¡ú id := expr  
+stmt ¡ú compound_stmt 
+stmt ¡ú if_stmt 
+stmt ¡ú for_stmt
+stmt ¡ú while bool do stmt 
+stmt ¡ú empty
+if_stmt ¡ú if bool then stmt 
+if_stmt ¡ú if bool then stmt else stmt 
+for_stmt ¡ú for id := expr to  expr  do  stmt 
+for_stmt ¡ú for id := expr  downto  expr  do  stmt 
+bool ¡ú expr > expr 
+bool ¡ú expr < expr 
+expr ¡ú expr + expr 
+expr ¡ú expr - expr 
+expr ¡ú expr * expr 
+expr ¡ú expr / expr 
+expr ¡ú expr ^ factor 
+expr ¡ú factor
+factor ¡ú id 
+factor ¡ú num 
+factor ¡ú ( expr )

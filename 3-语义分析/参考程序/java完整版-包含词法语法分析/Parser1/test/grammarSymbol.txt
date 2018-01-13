@@ -1,0 +1,2 @@
+s S compound_stmt stmts stmt expr if_stmt for_stmt bool factor 
+program id begin end  while do to if then else for downto num  empty + - * / < > := ^  ( ) ; . 

@@ -1,0 +1,2 @@
+if ( expr > num ) expr = expr + num;
+else expr = num * num + expr;

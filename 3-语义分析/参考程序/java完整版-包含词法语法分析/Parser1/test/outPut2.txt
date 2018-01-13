@@ -1,0 +1,71 @@
+	移入： program
+program 	移入： id
+program id 	移入： ;
+program id ; 	移入： begin
+program id ; begin 	移入： id
+program id ; begin id 	移入： :=
+program id ; begin id := 	移入： num
+program id ; begin id := num 	规约: factor → num
+program id ; begin id := factor 	规约: expr → factor
+program id ; begin id := expr 	规约: stmt → id := expr
+program id ; begin stmt 	规约: stmts → stmt
+program id ; begin stmts 	移入： ;
+program id ; begin stmts ; 	移入： for
+program id ; begin stmts ; for 	移入： id
+program id ; begin stmts ; for id 	移入： :=
+program id ; begin stmts ; for id := 	移入： num
+program id ; begin stmts ; for id := num 	规约: factor → num
+program id ; begin stmts ; for id := factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr 	移入： downto
+program id ; begin stmts ; for id := expr downto 	移入： num
+program id ; begin stmts ; for id := expr downto num 	规约: factor → num
+program id ; begin stmts ; for id := expr downto factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr 	移入： do
+program id ; begin stmts ; for id := expr downto expr do 	移入： if
+program id ; begin stmts ; for id := expr downto expr do if 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if id 	规约: factor → id
+program id ; begin stmts ; for id := expr downto expr do if factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if expr 	移入： <
+program id ; begin stmts ; for id := expr downto expr do if expr < 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if expr < id 	规约: factor → id
+program id ; begin stmts ; for id := expr downto expr do if expr < factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if expr < expr 	移入： +
+program id ; begin stmts ; for id := expr downto expr do if expr < expr + 	移入： num
+program id ; begin stmts ; for id := expr downto expr do if expr < expr + num 	规约: factor → num
+program id ; begin stmts ; for id := expr downto expr do if expr < expr + factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if expr < expr + expr 	规约: expr → expr + expr
+program id ; begin stmts ; for id := expr downto expr do if expr < expr 	规约: bool → expr < expr
+program id ; begin stmts ; for id := expr downto expr do if bool 	移入： then
+program id ; begin stmts ; for id := expr downto expr do if bool then 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if bool then id 	移入： :=
+program id ; begin stmts ; for id := expr downto expr do if bool then id := 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if bool then id := id 	规约: factor → id
+program id ; begin stmts ; for id := expr downto expr do if bool then id := factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if bool then id := expr 	规约: stmt → id := expr
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt 	移入： else
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id 	移入： :=
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := id 	规约: factor → id
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr 	移入： *
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr * 	移入： num
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr * num 	规约: factor → num
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr * factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr * expr 	规约: expr → expr * expr
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr 	移入： +
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr + 	移入： id
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr + id 	规约: factor → id
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr + factor 	规约: expr → factor
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr + expr 	规约: expr → expr + expr
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else id := expr 	规约: stmt → id := expr
+program id ; begin stmts ; for id := expr downto expr do if bool then stmt else stmt 	规约: if_stmt → if bool then stmt else stmt
+program id ; begin stmts ; for id := expr downto expr do if_stmt 	规约: stmt → if_stmt
+program id ; begin stmts ; for id := expr downto expr do stmt 	规约: for_stmt → for id := expr downto expr do stmt
+program id ; begin stmts ; for_stmt 	规约: stmt → for_stmt
+program id ; begin stmts ; stmt 	规约: stmts → stmts ; stmt
+program id ; begin stmts 	移入： end
+program id ; begin stmts end 	规约: compound_stmt → begin stmts end
+program id ; compound_stmt 	移入： .
+program id ; compound_stmt . 	规约: S → program id ; compound_stmt .
+S 	接受

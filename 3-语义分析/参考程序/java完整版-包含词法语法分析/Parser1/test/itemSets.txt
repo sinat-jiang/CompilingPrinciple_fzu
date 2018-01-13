@@ -1,0 +1,739 @@
+I0
+s → ? S 
+
+S → ? program id ; compound_stmt . 
+
+I1
+S → program ? id ; compound_stmt . 
+
+I2
+s → S ?
+
+I3
+S → program id ? ; compound_stmt . 
+
+I4
+S → program id ; ? compound_stmt .
+
+compound_stmt → ? begin stmts end
+
+I5
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+stmts → ? stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+compound_stmt → begin ? stmts end 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmts → ? stmts ; stmt 
+
+stmt → ? empty 
+
+I6
+S → program id ; compound_stmt ? . 
+
+I7
+stmt → empty ?
+
+I8
+stmt → for_stmt ?
+
+I9
+stmt → compound_stmt ?
+
+I10
+compound_stmt → begin stmts ? end 
+
+stmts → stmts ? ; stmt 
+
+I11
+factor → ? id 
+
+stmt → while ? bool do stmt 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+bool → ? expr > expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+bool → ? expr < expr 
+
+I12
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+if_stmt → if ? bool then stmt else stmt 
+
+bool → ? expr > expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+if_stmt → if ? bool then stmt 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+bool → ? expr < expr 
+
+I13
+stmt → id ? := expr 
+
+I14
+for_stmt → for ? id := expr downto expr do stmt 
+
+for_stmt → for ? id := expr to expr do stmt 
+
+I15
+stmt → if_stmt ?
+
+I16
+stmts → stmt ?
+
+I17
+S → program id ; compound_stmt . ?
+
+I18
+compound_stmt → begin stmts end ?
+
+I19
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+stmts → stmts ; ? stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmt → ? empty 
+
+I20
+stmt → while bool ? do stmt 
+
+I21
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ( ? expr ) 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I22
+factor → id ?
+
+I23
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+bool → expr ? > expr 
+
+bool → expr ? < expr 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+I24
+expr → factor ?
+
+I25
+factor → num ?
+
+I26
+if_stmt → if bool ? then stmt 
+
+if_stmt → if bool ? then stmt else stmt 
+
+I27
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+stmt → id := ? expr 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I28
+for_stmt → for id ? := expr downto expr do stmt 
+
+for_stmt → for id ? := expr to expr do stmt 
+
+I29
+stmts → stmts ; stmt ?
+
+I30
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmt → ? empty 
+
+stmt → while bool do ? stmt 
+
+I31
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+factor → ( expr ? ) 
+
+I32
+factor → ? ( expr ) 
+
+expr → expr ^ ? factor 
+
+factor → ? id 
+
+factor → ? num 
+
+I33
+factor → ? id 
+
+bool → expr > ? expr 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I34
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+bool → expr < ? expr 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I35
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+expr → expr / ? expr 
+
+I36
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+expr → expr - ? expr 
+
+I37
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+expr → expr + ? expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I38
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+expr → expr * ? expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I39
+if_stmt → if bool then ? stmt else stmt 
+
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+if_stmt → if bool then ? stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmt → ? empty 
+
+I40
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+stmt → id := expr ?
+
+I41
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+for_stmt → for id := ? expr downto expr do stmt 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+for_stmt → for id := ? expr to expr do stmt 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I42
+stmt → while bool do stmt ?
+
+I43
+factor → ( expr ) ?
+
+I44
+expr → expr ^ factor ?
+
+I45
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+bool → expr > expr ?
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+I46
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+bool → expr < expr ?
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+I47
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+expr → expr / expr ?
+
+I48
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+expr → expr - expr ?
+
+expr → expr ? - expr 
+
+I49
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr + expr ?
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+I50
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+expr → expr * expr ?
+
+I51
+if_stmt → if bool then stmt ?
+
+if_stmt → if bool then stmt ? else stmt 
+
+I52
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+expr → expr ? + expr 
+
+for_stmt → for id := expr ? to expr do stmt 
+
+expr → expr ? - expr 
+
+for_stmt → for id := expr ? downto expr do stmt 
+
+I53
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmt → ? empty 
+
+if_stmt → if bool then stmt else ? stmt 
+
+I54
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+for_stmt → for id := expr downto ? expr do stmt 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I55
+factor → ? id 
+
+expr → ? expr - expr 
+
+expr → ? expr / expr 
+
+factor → ? ( expr ) 
+
+expr → ? factor 
+
+expr → ? expr + expr 
+
+for_stmt → for id := expr to ? expr do stmt 
+
+factor → ? num 
+
+expr → ? expr ^ factor 
+
+expr → ? expr * expr 
+
+I56
+if_stmt → if bool then stmt else stmt ?
+
+I57
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+for_stmt → for id := expr downto expr ? do stmt 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+I58
+expr → expr ? / expr 
+
+expr → expr ? * expr 
+
+expr → expr ? ^ factor 
+
+for_stmt → for id := expr to expr ? do stmt 
+
+expr → expr ? + expr 
+
+expr → expr ? - expr 
+
+I59
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+for_stmt → for id := expr downto expr do ? stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmt → ? empty 
+
+I60
+stmt → ? while bool do stmt 
+
+stmt → ? compound_stmt 
+
+if_stmt → ? if bool then stmt else stmt 
+
+stmt → ? for_stmt 
+
+for_stmt → ? for id := expr downto expr do stmt 
+
+stmt → ? id := expr 
+
+compound_stmt → ? begin stmts end 
+
+if_stmt → ? if bool then stmt 
+
+for_stmt → for id := expr to expr do ? stmt 
+
+stmt → ? if_stmt 
+
+for_stmt → ? for id := expr to expr do stmt 
+
+stmt → ? empty 
+
+I61
+for_stmt → for id := expr downto expr do stmt ?
+
+I62
+for_stmt → for id := expr to expr do stmt ?
+
